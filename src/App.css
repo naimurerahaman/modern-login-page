@@ -1,8 +1,15 @@
 /* ── Design System ── */
 :root {
-  --amber: #d97706;
-  --amber-light: #f59e0b;
-  --amber-glow: rgba(217, 119, 6, 0.15);
+  /* Primary — Orange (from construction-auth/color.md) */
+  --color-primary:       #E55503; /* Pantone 1655 C */
+  --color-primary-light: #FF8B28; /* Pantone 1495 C */
+  --color-primary-glow:  rgba(229, 85, 3, 0.15);
+
+  /* Secondary — Navy Blue (from construction-auth/color.md) */
+  --color-secondary:       #002253; /* Pantone 2768 C */
+  --color-secondary-light: #224B88; /* Pantone 2154 C */
+
+  /* Neutrals */
   --charcoal: #0c0c0c;
   --charcoal-2: #141414;
   --charcoal-3: #1a1a1a;
@@ -33,15 +40,15 @@
   justify-content: center;
   overflow: hidden;
   background:
-    linear-gradient(135deg, var(--charcoal) 0%, #1a0e02 50%, var(--charcoal) 100%);
+    linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-light) 50%, var(--color-secondary) 100%);
 }
 
 .brand-overlay {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(217, 119, 6, 0.08) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 50%, rgba(217, 119, 6, 0.04) 0%, transparent 50%);
+    radial-gradient(ellipse at 20% 50%, rgba(229, 85, 3, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 50%, rgba(255, 139, 40, 0.06) 0%, transparent 50%);
   z-index: 1;
 }
 
@@ -51,8 +58,8 @@
   z-index: 1;
   opacity: 0.15;
   background-image:
-    linear-gradient(rgba(217, 119, 6, 0.3) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(217, 119, 6, 0.3) 1px, transparent 1px);
+    linear-gradient(rgba(229, 85, 3, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(229, 85, 3, 0.3) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
   -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
@@ -78,13 +85,13 @@
 .brand-badge {
   display: inline-block;
   padding: 6px 16px;
-  border: 1px solid var(--amber);
+  border: 1px solid var(--color-primary);
   border-radius: 100px;
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--amber);
+  color: var(--color-primary);
   margin-bottom: 32px;
   opacity: 0;
   animation: fadeUp 0.8s ease-out 0.2s forwards;
@@ -103,7 +110,7 @@
 }
 
 .brand-title span {
-  color: var(--amber);
+  color: var(--color-primary);
   font-style: italic;
 }
 
@@ -136,7 +143,7 @@
 .metric-value {
   font-family: "DM Serif Display", serif;
   font-size: 1.8rem;
-  color: var(--amber);
+  color: var(--color-primary);
 }
 
 .metric-label {
@@ -171,7 +178,7 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--amber-glow), transparent);
+  background: linear-gradient(90deg, transparent, var(--color-primary-glow), transparent);
 }
 
 .form-container {
@@ -286,7 +293,7 @@
   left: 12px;
   font-size: 0.75rem;
   font-weight: 500;
-  color: var(--amber);
+  color: var(--color-primary);
   background: var(--charcoal-2);
   padding: 0 6px;
   z-index: 2;
@@ -311,8 +318,8 @@
 }
 
 .input-group input:focus {
-  border-color: var(--amber);
-  box-shadow: 0 0 0 3px var(--amber-glow);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-glow);
 }
 
 .input-group input::placeholder {
@@ -354,11 +361,11 @@
 }
 
 .password-toggle:hover {
-  color: var(--amber);
+  color: var(--color-primary);
 }
 
 .password-wrapper input:focus + .password-toggle {
-  color: var(--amber);
+  color: var(--color-primary);
 }
 
 /* ── Forgot Password ── */
@@ -377,14 +384,14 @@
 }
 
 .forgot-password a:hover {
-  color: var(--amber);
+  color: var(--color-primary);
 }
 
 /* ── Submit Button ── */
 .submit-btn {
   width: 100%;
   padding: 14px;
-  background: var(--amber);
+  background: var(--color-primary);
   color: var(--charcoal);
   border: none;
   border-radius: var(--radius-sm);
@@ -401,9 +408,9 @@
 }
 
 .submit-btn:hover:not(:disabled) {
-  background: var(--amber-light);
+  background: var(--color-primary-light);
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px var(--amber-glow);
+  box-shadow: 0 8px 24px var(--color-primary-glow);
 }
 
 .submit-btn:active:not(:disabled) {
